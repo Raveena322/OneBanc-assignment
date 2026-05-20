@@ -62,6 +62,11 @@ npm run dev
 
 Frontend runs on: `http://localhost:5173`
 
+## Live Demo
+
+- Frontend: https://onebanc-assignment-frontend.onrender.com
+- Backend: https://onebanc-assignment-backend-qpzw.onrender.com
+
 ## Build
 
 ```bash

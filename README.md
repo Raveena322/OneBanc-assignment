@@ -81,9 +81,17 @@ Frontend runs on: `http://localhost:5173`
 
 ![Home dashboard](screenshots/home.png)
 
+### Dashboard
+
+![Dashboard screen](screenshots/dashboard.png)
+
 ### Pay Screen
 
-![Pay screen](screenshots/pay.png)
+![Pay screen](screenshots/pay-screen.png)
+
+### Pay Transfer
+
+![Pay transfer screen](screenshots/pay-transfer.png)
 
 ### Transaction History
 

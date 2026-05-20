@@ -67,6 +67,32 @@ Frontend runs on: `http://localhost:5173`
 - Frontend: https://onebanc-assignment-frontend.onrender.com
 - Backend: https://onebanc-assignment-backend-qpzw.onrender.com
 
+## Screenshots
+
+### Login
+
+![Login screen](screenshots/login.png)
+
+### Verify OTP
+
+![Verify OTP screen](screenshots/verify-otp.png)
+
+### Home Dashboard
+
+![Home dashboard](screenshots/home.png)
+
+### Pay Screen
+
+![Pay screen](screenshots/pay.png)
+
+### Transaction History
+
+![Transaction history](screenshots/history.png)
+
+### Rewards Screen
+
+![Rewards screen](screenshots/rewards.png)
+
 ## Build
 
 ```bash

@@ -4,7 +4,8 @@ import express from "express";
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors());
+// Allow configurable origin via ALLOWED_ORIGIN (set on Render)
+app.use(cors({ origin: process.env.ALLOWED_ORIGIN || "*" }));
 app.use(express.json());
 
 const dashboardData = {

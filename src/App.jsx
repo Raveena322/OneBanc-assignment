@@ -10,6 +10,9 @@ import TransactionHistoryScreen from "./screens/TransactionHistoryScreen";
 const tabs = ["home", "pay", "history", "rewards"];
 const DARK_MODE_KEY = "onebanc-dark-mode";
 
+// API base (set via Vite env var VITE_API_BASE in production)
+const API_BASE = import.meta.env.VITE_API_BASE || "";
+
 function readDarkModePreference() {
   try {
     return localStorage.getItem(DARK_MODE_KEY) === "true";
@@ -56,7 +59,7 @@ export default function App() {
 
     async function loadDashboard() {
       try {
-        const response = await fetch("/api/dashboard");
+        const response = await fetch(`${API_BASE}/api/dashboard`);
         if (!response.ok) throw new Error("Failed to fetch dashboard data");
         const data = await response.json();
         if (active) setDashboard(data);
@@ -69,7 +72,7 @@ export default function App() {
 
     async function loadTransactions() {
       try {
-        const response = await fetch("/api/transactions");
+        const response = await fetch(`${API_BASE}/api/transactions`);
         if (!response.ok) throw new Error("Failed to fetch transactions");
         const data = await response.json();
         if (active) {
@@ -91,7 +94,7 @@ export default function App() {
   async function requestOtp() {
     setAuthLoading(true);
     try {
-      const response = await fetch("/api/auth/request-otp", {
+      const response = await fetch(`${API_BASE}/api/auth/request-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone }),
@@ -108,7 +111,7 @@ export default function App() {
   async function verifyOtp() {
     setAuthLoading(true);
     try {
-      const response = await fetch("/api/auth/verify-otp", {
+      const response = await fetch(`${API_BASE}/api/auth/verify-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ otp }),
@@ -133,7 +136,7 @@ export default function App() {
   async function retryTransactions() {
     setTransactionsError("");
     try {
-      const response = await fetch("/api/transactions");
+      const response = await fetch(`${API_BASE}/api/transactions`);
       if (!response.ok) throw new Error("Failed to fetch");
       const data = await response.json();
       setTransactions(data.items ?? []);
